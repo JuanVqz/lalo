@@ -1,10 +1,11 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "orders/edit", type: :view do
+  let(:line_item) { build(:line_item) }
+  let(:order) { create(:order, line_items: [line_item]) }
+
   before(:each) do
-    @order = assign(:order, Order.create!(
-      comment: "MyText"
-    ))
+    @order = assign(:order, order)
   end
 
   it "renders the edit order form" do
