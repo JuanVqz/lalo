@@ -59,6 +59,9 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:comment)
+    params.require(:order).permit(
+      :comment,
+      line_items_attributes: [:id, :item_id, :quantity, :_destroy]
+    )
   end
 end

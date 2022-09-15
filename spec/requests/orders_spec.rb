@@ -2,9 +2,15 @@ require "rails_helper"
 
 RSpec.describe "/orders", type: :request do
 
-  let(:valid_attributes) {
-    attributes_for(:order)
-  }
+  let(:item) { create(:item) }
+  let(:valid_attributes) do
+    {
+      comment: "My Text",
+      line_items_attributes: [
+       { quantity:1.0, item_id: item.to_param, },
+      ]
+    }
+  end
 
   let(:invalid_attributes) {
     attributes_for(:order)
@@ -43,10 +49,11 @@ RSpec.describe "/orders", type: :request do
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Order" do
+      it "creates a new Order with LineItem" do
         expect {
           post orders_url, params: { order: valid_attributes }
         }.to change(Order, :count).by(1)
+          .and change(LineItem, :count).by(1)
       end
 
       it "redirects to the created order" do
@@ -55,7 +62,7 @@ RSpec.describe "/orders", type: :request do
       end
     end
 
-    xcontext "with invalid parameters" do
+    context "with invalid parameters" do
       it "does not create a new Order" do
         expect {
           post orders_url, params: { order: invalid_attributes }
@@ -91,9 +98,17 @@ RSpec.describe "/orders", type: :request do
       end
     end
 
-    xcontext "with invalid parameters" do
+    context "with invalid parameters" do
+      let(:order) { Order.create! valid_attributes }
+      let(:line_item) { order.line_items.last }
+
       it "renders a response with 422 status" do
-        order = Order.create! valid_attributes
+        invalid_attributes = {
+          comment: order.comment,
+          line_items_attributes: [
+            { id: line_item.to_param, _destroy: 1 }
+          ]
+        }
         patch order_url(order), params: { order: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
@@ -101,11 +116,12 @@ RSpec.describe "/orders", type: :request do
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested order" do
+    it "destroys the requested order with existing line_items" do
       order = Order.create! valid_attributes
       expect {
         delete order_url(order)
       }.to change(Order, :count).by(-1)
+        .and change(LineItem, :count).by(-1)
     end
 
     it "redirects to the orders list" do
