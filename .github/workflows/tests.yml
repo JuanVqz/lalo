@@ -26,20 +26,23 @@ jobs:
           --health-timeout 5s
           --health-retries 5
     steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Install Ruby Dependencies
+        run: bundle install
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
           node-version: 14
-      - name: Install node dependencies
-        run: yarn install
-      - uses: actions/checkout@v2
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-      - name: Install ruby dependencies
-        run: bundle install
-      - name: Run test suite
+      - name: Install Node Dependencies
+        run: |
+          yarn global add esbuild
+          yarn install
+          yarn build
+      - name: Run Test Suite
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:password@localhost:5432/lalo_test
