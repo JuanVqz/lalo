@@ -1,0 +1,52 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:10.13
+        ports: ["5432:5432"]
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: lalo_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Install Ruby Dependencies
+        run: bundle install
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install Node Dependencies
+        run: |
+          yarn global add esbuild
+          yarn install
+          yarn build
+      - name: Run Test Suite
+        env:
+          RAILS_ENV: test
+          DATABASE_URL: postgres://postgres:password@localhost:5432/lalo_test
+        run: |
+          bin/rails db:create
+          bin/rails db:schema:load
+          bundle exec rspec --format progress --profile
