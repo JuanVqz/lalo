@@ -18,14 +18,23 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
-
-/public/assets
-
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/app/assets/builds/*
-!/app/assets/builds/.keep
-
+# Frontend
+/public/assets
 /node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# RSpec
 spec/examples.txt
+
+# Vite Ruby
+/public/vite*
+node_modules
+# Vite uses dotenv and suggests to ignore local-only env files. See
+# https://vitejs.dev/guide/env-and-mode.html#env-files
+*.local
+

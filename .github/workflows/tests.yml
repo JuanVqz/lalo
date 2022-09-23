@@ -39,9 +39,7 @@ jobs:
           node-version: 14
       - name: Install Node Dependencies
         run: |
-          yarn global add esbuild
           yarn install
-          yarn build
       - name: Run Test Suite
         env:
           RAILS_ENV: test
