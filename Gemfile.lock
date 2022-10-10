@@ -169,7 +169,7 @@ GEM
     rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-rails (6.0.0.rc1)
+    rspec-rails (6.0.0)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       railties (>= 6.1)
@@ -213,7 +213,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
-    zeitwerk (2.6.0)
+    zeitwerk (2.6.1)
 
 PLATFORMS
   x86_64-linux
@@ -226,7 +226,7 @@ DEPENDENCIES
   propshaft
   puma (~> 5.0)
   rails (~> 7.0.4)
-  rspec-rails (~> 6.0.0.rc1)
+  rspec-rails (~> 6.0.0)
   slim-rails
   stimulus-rails
   turbo-rails
