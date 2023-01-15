@@ -112,10 +112,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz#c5a1a4bfe1b57f0c3e61b29883525c6da3e5c091"
   integrity sha512-y+EHuSchhL7FjHgvQL/0fnnFmO4T1bhvWANX6gcnqTjtnKWbTvUMCpGnv2+t+31d7RzyEAYAd4u2fnIhHL6N/Q==
 
-"@hotwired/stimulus@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.1.tgz#652f08a8e1d5edcb407340e58818fcff463b5848"
-  integrity sha512-e0JpzIaYLsRRXevRDVs0yevabiCvieIWWCwh7VqVXjXM5AOHdjb7AjaKIj34zYFmY1N6HIRRfk915WVMYlHnDA==
+"@hotwired/stimulus@^3.2.1":
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.1.tgz#e3de23623b0c52c247aba4cd5d530d257008676b"
+  integrity sha512-HGlzDcf9vv/EQrMJ5ZG6VWNs8Z/xMN+1o2OhV1gKiSG6CqZt5MCBB1gRg5ILiN3U0jEAxuDTNPRfBcnZBDmupQ==
 
 "@hotwired/turbo-rails@^7.2.4":
   version "7.2.4"
@@ -403,10 +403,10 @@ run-parallel@^1.1.9:
   dependencies:
     queue-microtask "^1.2.2"
 
-sass@^1.56.1:
-  version "1.56.1"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.56.1.tgz#94d3910cd468fd075fa87f5bb17437a0b617d8a7"
-  integrity sha512-VpEyKpyBPCxE7qGDtOcdJ6fFbcpOM+Emu7uZLxVrkX8KVU/Dp5UF7WLvzqRuUhB6mqqQt1xffLoG+AndxTZrCQ==
+sass@^1.57.1:
+  version "1.57.1"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.57.1.tgz#dfafd46eb3ab94817145e8825208ecf7281119b5"
+  integrity sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -429,15 +429,15 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-vite-plugin-full-reload@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.0.4.tgz#3fecd446f9accd5af01eb0328f6d161dca7cfc45"
-  integrity sha512-9WejQII6zJ++m/YE173Zvl2jq4cqa404KNrVT+JDzDnqaGRq5UvOvA48fnsSWPIMXFV7S0dq5+sZqcSB+tKBgA==
+vite-plugin-full-reload@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/vite-plugin-full-reload/-/vite-plugin-full-reload-1.0.5.tgz#6cddfa94e51909843bc7156ab728dbac972b8560"
+  integrity sha512-kVZFDFWr0DxiHn6MuDVTQf7gnWIdETGlZh0hvTiMXzRN80vgF4PKbONSq8U1d0WtHsKaFODTQgJeakLacoPZEQ==
   dependencies:
     picocolors "^1.0.0"
     picomatch "^2.3.1"
 
-vite-plugin-ruby@^3.1.2:
+vite-plugin-ruby@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vite-plugin-ruby/-/vite-plugin-ruby-3.1.3.tgz#893ee7dc3b25daf5611c16c3dc0ca3420e6a801c"
   integrity sha512-Y7j0lL8xNMSN1c2/sKBlaLkp0nFtxNFU9/kUReX/GMTOAk8fBylrR9ZdC3fej6EnYzbO3VDtfDDyWzYaoCW3hA==
