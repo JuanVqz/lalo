@@ -6,7 +6,7 @@ ruby "3.0.4"
 gem "bootsnap", require: false
 gem "pg", "~> 1.4"
 gem "propshaft"
-gem "puma", "~> 6.1"
+gem "puma", "~> 6.2"
 gem "rails", "~> 7.0.4"
 gem "slim-rails"
 gem "stimulus-rails"
