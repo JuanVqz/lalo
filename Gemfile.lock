@@ -118,7 +118,7 @@ GEM
       racc (~> 1.4)
     nokogiri (1.14.3-x86_64-linux)
       racc (~> 1.4)
-    pg (1.4.6)
+    pg (1.5.2)
     propshaft (0.7.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -222,7 +222,7 @@ DEPENDENCIES
   bootsnap
   debug
   factory_bot_rails
-  pg (~> 1.4)
+  pg (~> 1.5)
   propshaft
   puma (~> 6.2)
   rails (~> 7.0.4)
