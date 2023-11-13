@@ -7,7 +7,7 @@ gem "bootsnap", require: false
 gem "pg", "~> 1.5"
 gem "propshaft"
 gem "puma", "~> 6.3"
-gem "rails", "~> 7.0.5"
+gem "rails", "~> 7.1.2"
 gem "slim-rails"
 gem "stimulus-rails"
 gem "turbo-rails"
